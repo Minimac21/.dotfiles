@@ -1,5 +1,5 @@
 runtime defaults.vim
-colo wildcharm
+
 
 "S for global substitution
 nnoremap S :%s//g<Left><Left>
@@ -25,13 +25,33 @@ autocmd bufwritepost .vimrc source ~/.vimrc
 
 set listchars=tab:>-,space:_
 
+"Plug 'nvim-treesitter/nvim-treesitter'
 "https://github.com/junegunn/vim-plug
 call plug#begin()
 
 Plug 'ap/vim-css-color'
 Plug 'terryma/vim-smooth-scroll'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'prabirshrestha/vim-lsp'
+
 Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
 
 call plug#end()
+
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'allowlist': ['python'],
+        \ })
+endif
+
+let g:lsp_log_file=''
+
+" allow modifying the completeopt variable, or it will
+" be overridden all the time
+let g:asyncomplete_auto_completeopt = 0
+
+set completeopt=menuone,noinsert,noselect,preview
+
