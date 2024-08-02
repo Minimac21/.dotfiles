@@ -10,3 +10,12 @@ alias obsidian="/opt/Obsidian-1.3.5.AppImage"
 alias sqlserversudo="sudo /opt/mssql/bin/sqlservr"
 alias shorten="export PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '"
 alias lengthen="export PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \w\[\033[01;32m\]]\$\[\033[00m\] '"
+for j in $(seq 0 100);
+do 
+  l="l"
+  for i in $(seq 1 $j); 
+  do 
+    l="${l}l"
+  done
+  alias $l="ls -l"
+done
