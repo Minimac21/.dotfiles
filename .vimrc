@@ -1,5 +1,5 @@
 runtime defaults.vim
-
+colo wildcharm
 
 "S for global substitution
 nnoremap S :%s//g<Left><Left>
@@ -14,6 +14,7 @@ set autoindent
 
 map <leader>r :w<cr>:!%:p<cr>
 map <leader>p :w<cr>:!python<cr>
+map <leader>i :w<cr>:!python -i %<cr>
 map <leader>n :set rnu! <bar> set nu!<cr>
 map <leader>v :tabe ~/.vimrc<cr>
 

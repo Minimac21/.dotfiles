@@ -4,6 +4,7 @@ alias la="ls -la"
 alias lt="ll -ct" #sort by time
 alias diff="diff --color='auto'"
 alias pgrep="pgrep -l"
+alias ip="ip --color=auto"
 alias flashpd="/home/mac/media/games/flashplayerdebugger"
 alias flashp="/home/mac/media/games/flashplayer"
 alias obsidian="/opt/Obsidian-1.3.5.AppImage"

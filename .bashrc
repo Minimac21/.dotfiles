@@ -6,6 +6,7 @@
 
 #MAC STUFF
 source ~/.bash_aliases
+ssh-add -l > /dev/null || ssh-add ~/.ssh/cseunl_rsa
 
 hgrep() {
   history | grep -i $1 | grep -v grep 
@@ -14,6 +15,9 @@ wich(){
   readlink -f $(which $1)
 }
 unl="mdepries@cse.unl.edu"
+unl2="mdepriest2@cse-linux-01.unl.edu"
+choueiry="c-bchoueiry2@cse-linux-01.unl.edu"
+choueiryb="$choueiry -t bash --rcfile .macbashrc"
 export VISUAL="/usr/bin/vim"
 export EDITOR="/usr/bin/vim"
 
@@ -30,6 +34,14 @@ function cht() {
   curl $url
 }
 ~/.bash.d/cht.sh
+
+export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
+export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
+export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
+export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
+export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
+export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
 #export DOTNET_ROOT="/opt/dotnet"
 #export PATH="$PATH:/opt/dotnet"
