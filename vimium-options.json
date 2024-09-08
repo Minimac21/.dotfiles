@@ -1,0 +1,34 @@
+{
+  "keyMappings": "map <C-S-c> <C-c>",
+  "settingsVersion": "2.1.2",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "j,l,k,f,m",
+      "pattern": "https?://www.youtube.com/watch*"
+    },
+    {
+      "passKeys": "/",
+      "pattern": "https?://www.google.com/*"
+    },
+    {
+      "passKeys": "f,m",
+      "pattern": "https?://binged.live/*"
+    },
+    {
+      "passKeys": "f,m",
+      "pattern": "https?://app.gumroad.com/*"
+    },
+    {
+      "passKeys": "j,k,m,f",
+      "pattern": "https?://www.netflix.com/*"
+    },
+    {
+      "passKeys": "f,m,h,j,k,l",
+      "pattern": "https?://www.braflix.ru/*"
+    }
+  ]
+}
