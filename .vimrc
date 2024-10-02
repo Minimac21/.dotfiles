@@ -15,8 +15,11 @@ set autoindent
 map <leader>r :w<cr>:!%:p<cr>
 map <leader>p :w<cr>:!python<cr>
 map <leader>i :w<cr>:!python -i %<cr>
+
 map <leader>n :set rnu! <bar> set nu!<cr>
 map <leader>v :tabe ~/.vimrc<cr>
+map <leader>z :w<cr>:!compile_show_pdf %<cr>
+map gd :LspDefinition<cr>
 
 map <C-j> <C-e>
 map <C-k> <C-y>
@@ -30,23 +33,25 @@ set listchars=tab:>-,space:_
 "https://github.com/junegunn/vim-plug
 call plug#begin()
 
+Plug 'tribela/vim-transparent'
 Plug 'ap/vim-css-color'
 Plug 'terryma/vim-smooth-scroll'
 
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'powerline/powerline'
 
 call plug#end()
 
-if executable('pyls')
-    " pip install python-language-server
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'allowlist': ['python'],
-        \ })
-endif
+"if executable('pyls')
+"   " pip install python-language-server
+"   au User lsp_setup call lsp#register_server({
+"       \ 'name': 'pyls',
+"       \ 'cmd': {server_info->['pyls']},
+"       \ 'allowlist': ['python'],
+"       \ })
+"endif
 
 let g:lsp_log_file=''
 
@@ -56,3 +61,14 @@ let g:asyncomplete_auto_completeopt = 0
 
 set completeopt=menuone,noinsert,noselect,preview
 
+let g:word_count=wordcount().words
+function WordCount()
+    if has_key(wordcount(),'visual_words')
+        let g:word_count=wordcount().visual_words."/".wordcount().words " count selected words
+    else
+        let g:word_count=wordcount().cursor_words."/".wordcount().words " or shows words 'so far'
+    endif
+    return g:word_count
+endfunction
+
+set statusline+=\ w:%{WordCount()},

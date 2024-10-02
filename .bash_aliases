@@ -11,6 +11,9 @@ alias obsidian="/opt/Obsidian-1.3.5.AppImage"
 alias sqlserversudo="sudo /opt/mssql/bin/sqlservr"
 alias shorten="export PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '"
 alias lengthen="export PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \w\[\033[01;32m\]]\$\[\033[00m\] '"
+alias morning_xeets="cd ~/projects/morning-xeets && source .venv/bin/activate && ./morning-xeets.py"
+alias dockerstartup="sudo systemctl start docker.service docker.socket"
+
 for j in $(seq 0 100);
 do 
   l="l"
