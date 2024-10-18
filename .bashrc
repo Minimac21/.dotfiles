@@ -33,10 +33,10 @@ function cht() {
   url=${url::-1}
   curl $url
 }
-chtcomplete="~/.bash.d/cht.sh"
-if [ ! -f $chtcomplete ]; then
-  curl https://cht.sh/:bash_completion > $chtcomplete;
-  chmod 777 $chtcomplete;
+chtcomplete=".bash.d/cht.sh"
+if [ ! -f ~/$chtcomplete ]; then
+  curl https://cht.sh/:bash_completion > ~/$chtcomplete;
+  chmod 777 ~/$chtcomplete;
 fi
 source $chtcomplete
 
