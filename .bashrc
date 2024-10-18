@@ -33,7 +33,12 @@ function cht() {
   url=${url::-1}
   curl $url
 }
-~/.bash.d/cht.sh
+chtcomplete="~/.bashd.d/cht.sh"
+if [ ! -f $chtcomplete ]; then
+  curl https://cht.sh/:bash_completion > $chtcomplete;
+  chmod 777 $chtcomplete;
+fi
+source $chtcomplete
 
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
 export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink

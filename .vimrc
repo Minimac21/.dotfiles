@@ -17,9 +17,9 @@ map <leader>p :w<cr>:!python<cr>
 map <leader>i :w<cr>:!python -i %<cr>
 
 map <leader>n :set rnu! <bar> set nu!<cr>
-map <leader>v :tabe ~/.vimrc<cr>
+map <leader>v :tabe /home/mac/.vimrc<cr>
 map <leader>z :w<cr>:!compile_show_pdf %<cr>
-map gd :LspDefinition<cr>
+"map gd :LspDefinition<cr>
 
 map <C-j> <C-e>
 map <C-k> <C-y>
@@ -44,13 +44,6 @@ Plug 'powerline/powerline'
 
 call plug#end()
 
-"if executable('pyls')
-"   " pip install python-language-server
-"   au User lsp_setup call lsp#register_server({
-"       \ 'name': 'pyls',
-"       \ 'cmd': {server_info->['pyls']},
-"       \ 'allowlist': ['python'],
-"       \ })
 "endif
 
 let g:lsp_log_file=''
