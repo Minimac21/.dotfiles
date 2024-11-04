@@ -5,8 +5,9 @@
 [[ $- != *i* ]] && return
 
 #MAC STUFF
+complete -cf sudo #autocomplete after sudo
 source ~/.bash_aliases
-ssh-add -l > /dev/null || ssh-add ~/.ssh/cseunl_rsa
+ssh-add -l > /dev/null || ssh-add ~/.ssh/cseunl_rsa #add cseunl_rsa only once
 
 hgrep() {
   history | grep -i $1 | grep -v grep 
@@ -38,7 +39,7 @@ if [ ! -f ~/$chtcomplete ]; then
   curl https://cht.sh/:bash_completion > ~/$chtcomplete;
   chmod 777 ~/$chtcomplete;
 fi
-source $chtcomplete
+source ~/$chtcomplete
 
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
 export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink

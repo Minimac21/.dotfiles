@@ -3,6 +3,7 @@ alias ll="ls -l"
 alias la="ls -la"
 alias lt="ll -ct" #sort by time
 alias diff="diff --color='auto'"
+alias df="df -h"
 alias pgrep="pgrep -l"
 alias ip="ip --color=auto"
 alias flashpd="/home/mac/media/games/flashplayerdebugger"
