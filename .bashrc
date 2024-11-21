@@ -5,7 +5,13 @@
 [[ $- != *i* ]] && return
 
 #MAC STUFF
-complete -cf sudo #autocomplete after sudo
+
+#tab-completion
+complete -cf sudo 
+complete -cf man 
+complete -cf alias
+complete -cf which 
+
 source ~/.bash_aliases
 ssh-add -l > /dev/null || ssh-add ~/.ssh/cseunl_rsa #add cseunl_rsa only once
 
@@ -200,4 +206,4 @@ set_path(){
     done
 }
 
-set_path ~/bin
+set_path ~/bin ~/.local/bin
