@@ -2,6 +2,7 @@ alias mpv="mpv -fs"
 alias ll="ls -l"
 alias la="ls -la"
 alias lt="ll -ct" #sort by time
+alias mv="mv -i"  #confirm overwrite
 alias diff="diff --color='auto'"
 alias df="df -x tmpfs -h"
 alias pgrep="pgrep -l"
@@ -19,9 +20,9 @@ alias dockerstartup="sudo systemctl start docker.service docker.socket"
 alias cowpi_upload="sudo mount /dev/disk/by-label/RPI-RP2 /mnt/cowpi && sudo cp .pio/build/pico/firmware.uf2 /mnt/cowpi"
 alias cowpi_build_upload="platformio run && cowpi_upload"
 
+l="l"
 for j in $(seq 0 100);
 do 
-  l="l"
   for i in $(seq 1 $j); 
   do 
     l="${l}l"

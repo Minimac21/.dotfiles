@@ -5,6 +5,7 @@
 [[ $- != *i* ]] && return
 
 #MAC STUFF
+stty -ixon #Allows for ctrl-s to be used to go forwards in history search (ctrl-r for searching and backwards)
 
 #tab-completion
 complete -cf sudo 
@@ -13,7 +14,7 @@ complete -cf alias
 complete -cf which 
 
 source ~/.bash_aliases
-ssh-add -l > /dev/null || ssh-add ~/.ssh/cseunl_rsa #add cseunl_rsa only once
+ssh-add -l > /dev/null || ssh-add ~/.ssh/{cseunl,website}_rsa #add keys only once
 
 hgrep() {
   history | grep -i $1 | grep -v grep 
@@ -206,4 +207,5 @@ set_path(){
     done
 }
 
-set_path ~/bin ~/.local/bin
+set_path ~/bin ~/.local/bin .
+

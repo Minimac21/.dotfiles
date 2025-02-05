@@ -17,6 +17,7 @@ map <leader>r :w<cr>:!%:p<cr>
 map <leader>p :w<cr>:!python<cr>
 map <leader>i :w<cr>:!python -i %<cr>
 map <leader>4 :w<cr>:!wc -w %<cr>
+map <leader>c :w<cr>:!./cfdg % --display sxiv<cr>
 
 
 map <leader>n :set rnu! <bar> set nu!<cr>
