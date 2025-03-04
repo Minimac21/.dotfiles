@@ -1,5 +1,6 @@
 runtime defaults.vim
 colo wildcharm
+highlight Normal guifg=white guibg=black
 
 set clipboard=unnamed
 "S for global substitution
@@ -37,7 +38,9 @@ set listchars=tab:>-,space:_
 "https://github.com/junegunn/vim-plug
 call plug#begin()
 
-Plug 'tribela/vim-transparent'
+if !has('gui_running')
+  Plug 'tribela/vim-transparent'
+endif
 Plug 'ap/vim-css-color'
 Plug 'terryma/vim-smooth-scroll'
 
